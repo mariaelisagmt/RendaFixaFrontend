@@ -1,0 +1,17 @@
+<div class="flex flex-col items-center rounded bg-gray-100 p-3">
+    <h6 class="text-xl font-semibold text-gray-800">Saldo disponível</h6>
+    
+    <p class="text-gray-800" *ngIf="mostrarSaldo">R$ 15.895,50</p>
+    <p class="text-gray-800" *ngIf="!mostrarSaldo">******</p>
+    
+    <button (click)="alternarVisibilidade()" class="focus:outline-none">
+      <svg *ngIf="mostrarSaldo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6">
+        <path d="M12 4.5C7.0002 4.5 3.19968 8.10439 1.59457 12C3.19968 15.8956 7.0002 19.5 12 19.5C17.0003 19.5 20.8008 15.8956 22.406 12C20.8008 8.10439 17.0003 4.5 12 4.5ZM12 17C8.6787 17 6 14.3213 6 11C6 7.67871 8.6787 5 12 5C15.3213 5 18 7.67871 18 11C18 14.3213 15.3213 17 12 17Z" fill="black"/>
+      </svg>
+  
+      <svg *ngIf="!mostrarSaldo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6">
+        <path d="M2 12C2 13.6394 2.42496 14.1915 3.27489 15.2957C4.97196 17.5004 7.81811 20 12 20C16.1819 20 19.028 17.5004 20.7251 15.2957C21.575 14.1915 22 13.6394 22 12C22 10.3606 21.575 9.80853 20.7251 8.70433C19.028 6.49956 16.1819 4 12 4C7.81811 4 4.97196 6.49956 3.27489 8.70433C2.42496 9.80853 2 10.3606 2 12ZM12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25Z" fill="black"/>
+      </svg>
+    </button>
+</div>
+  

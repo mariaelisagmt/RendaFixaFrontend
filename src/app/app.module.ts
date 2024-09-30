@@ -18,6 +18,7 @@ import { StructComponent } from './_components/struct/struct.component';
 import { NavbarComponent } from './_components/navbar/navbar.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { QuantityInputComponent } from './_components/quantity-input/quantity-input.component';
+import { EyeButtonComponent } from './_components/eye-button/eye-button.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { QuantityInputComponent } from './_components/quantity-input/quantity-in
     StructComponent,
     NavbarComponent,
     FooterComponent,
-    QuantityInputComponent
+    QuantityInputComponent,
+    EyeButtonComponent
   ],
   imports: [
     BrowserModule,
