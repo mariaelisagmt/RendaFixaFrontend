@@ -20,6 +20,9 @@ import { FooterComponent } from './_components/footer/footer.component';
 import { QuantityInputComponent } from './_components/quantity-input/quantity-input.component';
 import { EyeButtonComponent } from './_components/eye-button/eye-button.component';
 
+import { RendaFixaService } from './services/rendafixa.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,11 +43,10 @@ import { EyeButtonComponent } from './_components/eye-button/eye-button.componen
     BrowserAnimationsModule,
     MatMenuModule,
     MatIcon,
+    HttpClientModule,
     FormsModule
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [RendaFixaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

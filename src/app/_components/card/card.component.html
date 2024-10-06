@@ -1,13 +1,13 @@
 <div class="max-w-auto mx-auto bg-white rounded-lg shadow-md overflow-hidden mb-4">
     <div class="bg-red-900 p-2">
-      <h6 class="text-3xl font-bold text-white">LCA</h6>
+      <h6 class="text-3xl font-bold text-white">{{ produto?.nome}}</h6>
     </div>
     <div class="p-3 flex justify-between">
         <table class="table-auto text-gray-500 w-6/12 items-center">
           <tbody>
             <tr>
               <td class="px-4 py-2">Indexador</td>
-              <td class="px-4 py-2 text-white font-semibold rounded bg-blue-950">IPCA</td>
+              <td class="px-4 py-2 text-white font-semibold rounded bg-blue-950">{{ produto?.indexador}}</td>
             </tr>
             <tr>
               <td class="px-4 py-2">Banco</td>
@@ -15,7 +15,7 @@
             </tr>
             <tr>
               <td class="px-4 py-2">Estoque</td>
-              <td class="px-4 py-2 text-gray-800">100</td>
+              <td class="px-4 py-2 text-gray-800">{{ produto?.estoque}}</td>
             </tr>
           </tbody>
         </table>
@@ -23,11 +23,11 @@
         <div class="space-y-4 w-6/12 flex flex-col items-center">
             <div class="flex items-center ml-auto">
                 <p class="mr-3 text-gray-500 text-sm w-16">Taxa:</p>
-                <h6 class="text-green-600 font-bold">+5,46%</h6>
+                <h6 class="text-green-600 font-bold">{{ produto?.taxa}}</h6>
             </div>
             <div class="flex items-center ml-auto">
                 <p class="mr-3 text-gray-500 text-sm mt-2">Preço a partir de:</p>
-                <h5 class="text-blue-950 text-lg px-2 py-1 font-bold">R$150,62</h5>
+                <h5 class="text-blue-950 text-lg px-2 py-1 font-bold">{{ produto?.precoUnitario}}</h5>
             </div>
         </div>          
       </div>  
