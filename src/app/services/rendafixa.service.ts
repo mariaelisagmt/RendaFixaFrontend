@@ -1,7 +1,7 @@
-// src/app/services/book.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CreateAporteRequest } from '../models/aporterequest.mode';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +34,9 @@ export class RendaFixaService {
     let x = this.http.get(this.URL+"/api/ProdutoRendaFixa");
     console.log(x);
     return x;
-  }  
+  }
+
+  createAporte(aporte: CreateAporteRequest): Observable<any> {
+    return this.http.post<CreateAporteRequest>(this.URL+"/api/aporte", aporte);
+  }
 }

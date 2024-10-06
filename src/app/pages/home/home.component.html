@@ -10,7 +10,7 @@
             <app-eye-button-disponivel [saldo]="conta?.saldo"></app-eye-button-disponivel>
         </div>
         <div *ngFor="let produto of produtos">
-            <app-card [produto]="produto" [saldo]="conta?.saldo"></app-card>
+            <app-card [produto]="produto" [conta]="conta"></app-card>
         </div>
     </div>
     <app-footer></app-footer>
