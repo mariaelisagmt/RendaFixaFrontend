@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { matMenuAnimations, MatMenuModule } from '@angular/material/menu';
 import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
@@ -22,6 +21,7 @@ import { EyeButtonComponent } from './_components/eye-button/eye-button.componen
 
 import { RendaFixaService } from './services/rendafixa.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalComponent } from './_components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +34,14 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     FooterComponent,
     QuantityInputComponent,
-    EyeButtonComponent
+    EyeButtonComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatMenuModule,
     MatIcon,
     HttpClientModule,
     FormsModule

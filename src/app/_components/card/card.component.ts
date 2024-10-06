@@ -1,8 +1,9 @@
-import { Component, Input, } from '@angular/core';
+import { Component, Input, ViewChild, } from '@angular/core';
 import { GetAllProdutosResponse } from '../../models/produto.model';
 import { GetContaByIdResponse } from '../../models/conta.model';
 import { CreateAporteRequest } from '../../models/aporterequest.mode';
 import { RendaFixaService } from '../../services/rendafixa.service';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-card',
@@ -15,6 +16,8 @@ export class CardComponent {
   quantidade: number = 1;
 
   constructor(private rendaFixaService: RendaFixaService) {}
+  
+  @ViewChild(ModalComponent) modal!: ModalComponent;
   
   get calcularPrecoTotal(): number{
     return this.produto ? this.produto.precoUnitario * this.quantidade : 0;
@@ -35,9 +38,11 @@ export class CardComponent {
       this.rendaFixaService.createAporte(newAporte).subscribe(
         response => {
           console.log('Aporte realizado com sucesso', response);
+          this.modal.openModal();
         }, 
         error => {
           console.error('Erro ao realizar o aporte', error);
+          this.modal.openModal();
         }
       );
     }
