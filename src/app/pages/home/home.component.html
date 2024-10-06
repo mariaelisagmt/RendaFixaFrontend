@@ -9,8 +9,9 @@
             </div>
             <app-eye-button-disponivel></app-eye-button-disponivel>
         </div>
-        <app-card></app-card>
-        <app-card></app-card>
+        <div *ngFor="let produto of produtos">
+            <app-card [produto]="produto"></app-card>
+        </div>
     </div>
 </body>
 <app-footer></app-footer>
