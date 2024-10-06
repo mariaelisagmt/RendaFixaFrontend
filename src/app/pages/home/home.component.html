@@ -7,11 +7,11 @@
                 <h5 class="text-x3 font-semibold text-gray-800">Produtos de Renda Fixa</h5>
                 <p class="mt-2 text-gray-600">Os investimentos em renda fixa são seguros e oferece um fluxo de rendimento mais estável e previsível.</p>
             </div>
-            <app-eye-button-disponivel></app-eye-button-disponivel>
+            <app-eye-button-disponivel [saldo]="conta?.saldo"></app-eye-button-disponivel>
         </div>
         <div *ngFor="let produto of produtos">
             <app-card [produto]="produto"></app-card>
         </div>
     </div>
+    <app-footer></app-footer>
 </body>
-<app-footer></app-footer>
