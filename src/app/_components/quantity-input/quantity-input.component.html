@@ -1,15 +1,22 @@
 <div class="flex items-center space-x-1">
-    <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-l hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
-            (click)="decreaseValue()">
-      -
-    </button>
-  
-    <input [(ngModel)]="quantity" type="number" min="1"
-           class="w-16 text-center border border-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+  <button
+    class="bg-gray-300 text-gray-700 px-4 py-2 rounded-l hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+    (click)="decrementarValor()">
+    -
+  </button>
 
-    <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-r hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
-            (click)="increaseValue()">
-      +
-    </button>
-  </div>
-  
+  <input [(ngModel)]="quantidade"
+    (ngModelChange)="calcularPreco()"
+    type="number" min="1" class="w-16 text-center border border-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+
+  <button
+    class="bg-gray-300 text-gray-700 px-4 py-2 rounded-r hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+    (click)="incrementarValor()"
+    [disabled]="incrementarDesabilitado"
+    [ngClass]="{
+      'bg-gray-300 text-gray-700 hover:bg-gray-400': !incrementarDesabilitado,
+      'bg-gray-200 text-gray-400 cursor-not-allowed': incrementarDesabilitado
+    }">
+    +
+  </button>
+</div>
