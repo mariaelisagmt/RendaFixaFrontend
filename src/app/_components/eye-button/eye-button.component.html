@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center rounded bg-gray-100 p-3">
     <h6 class="text-xl font-semibold text-gray-800">Saldo disponível</h6>
     
-    <p class="text-gray-800" *ngIf="mostrarSaldo">{{getSaldo()}}</p>
+    <p class="text-gray-800" *ngIf="mostrarSaldo">{{obterSaldo()}}</p>
     <p class="text-gray-800" *ngIf="!mostrarSaldo">******</p>
     
     <button (click)="alternarVisibilidade()" class="focus:outline-none">

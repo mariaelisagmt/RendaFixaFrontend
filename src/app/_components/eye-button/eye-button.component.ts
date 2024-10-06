@@ -9,7 +9,7 @@ export class EyeButtonComponent {
   @Input() saldo: number | undefined; 
   mostrarSaldo: boolean = false;
   
-  getSaldo(): string {
+  obterSaldo(): string {
     return this.saldo? "R$ " + this.saldo.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') : "R$ 0,00";
   }
 

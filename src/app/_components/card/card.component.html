@@ -32,7 +32,9 @@
         </div>          
       </div>  
       <div class="p-3 flex justify-between">
-        <app-quantity-input (quantityChange)="atualizarQuantidade($event)"></app-quantity-input>
+        <app-quantity-input (mudarQuantidade)="atualizarQuantidade($event)"
+        [preco]="produto?.precoUnitario"
+        [saldo]="saldo"></app-quantity-input>
         <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
           Comprar
         </button>
