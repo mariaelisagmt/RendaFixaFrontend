@@ -11,6 +11,15 @@ import { RendaFixaService } from '../../services/rendafixa.service';
 export class CardComponent {
   constructor(private rendaFixaService: RendaFixaService) {}
   @Input() produto: GetAllProdutosResponse | undefined; 
+  quantidade: number = 1;
+  
+  get calcularPrecoTotal(): number{
+    return this.produto ? this.produto.precoUnitario * this.quantidade : 0;
+  }
+  
+  atualizarQuantidade(novaQuantidade: number) {
+    this.quantidade = novaQuantidade;
+  }
 }
 
 

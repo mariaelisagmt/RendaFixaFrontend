@@ -23,16 +23,16 @@
         <div class="space-y-4 w-6/12 flex flex-col items-center">
             <div class="flex items-center ml-auto">
                 <p class="mr-3 text-gray-500 text-sm w-16">Taxa:</p>
-                <h6 class="text-green-600 font-bold">{{ produto?.taxa}}</h6>
+                <h6 class="text-green-600 font-bold">{{ produto?.taxa?.toFixed(2)?.replace('.',',') }} %</h6>
             </div>
             <div class="flex items-center ml-auto">
                 <p class="mr-3 text-gray-500 text-sm mt-2">Preço a partir de:</p>
-                <h5 class="text-blue-950 text-lg px-2 py-1 font-bold">{{ produto?.precoUnitario}}</h5>
+                <h5 class="text-blue-950 text-lg px-2 py-1 font-bold">R$ {{ calcularPrecoTotal.toFixed(2).replace('.',',') }}</h5>
             </div>
         </div>          
       </div>  
       <div class="p-3 flex justify-between">
-        <app-quantity-input></app-quantity-input>
+        <app-quantity-input (quantityChange)="atualizarQuantidade($event)"></app-quantity-input>
         <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
           Comprar
         </button>
