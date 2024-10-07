@@ -1,0 +1,19 @@
+<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" *ngIf="isOpen">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+            <div class="bg-gray-500">
+                <h3 class="p-4 text-lg font-semibold text-white">Informação:</h3>
+            </div>
+            <p class="p-4 mt-2 text-lg text-gray-500">
+                {{mensagem}}
+            </p>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button
+                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:w-auto sm:text-sm"
+                    (click)="closeModal()">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
