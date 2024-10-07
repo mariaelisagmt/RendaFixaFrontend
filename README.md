@@ -1,27 +1,70 @@
-# RendaFixaUI
+# RendaFixaFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+Projeto desenvolvido para realizar investimentos em renda fixa. No qual, o cliente possui uma conta e pode realizar aportes escolhendo um produto de renda fixa.
+:fa-arrow-right: **Desafio proposto pela Toro Investimento para o cargo de Desenvolvedor de Software.**
 
-## Development server
+## Visão Geral
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O projeto foi segmentado em três partes: 
+- BACKEND: WebApi
+- FRONTEND: Angular 
+- BANCO DE DADOS: Sql Server
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**User Storie:**
+> Eu, como investidor, gostaria de ter acesso a uma lista de 6 ou mais produtos de Renda Fixa, com seus respectivos nomes, preços unitários, taxas e lastro(estoque), para que eu possa comprar. A cada produto escolhido durante a compra desejo informar as quantidades. Além disso, gostaria de ver meu saldo da minha conta Toro. Minhas compras devem respeitar o limite de saldo e lastro do produto, para que assim eu possa adquirir produtos de Renda Fixa com sucesso.Eu, como investidor, gostaria de ter acesso a uma lista de 6 ou mais produtos de Renda Fixa, com seus respectivos nomes, preços unitários, taxas e lastro(estoque), para que eu possa comprar. A cada produto escolhido durante a compra desejo informar as quantidades. Além disso, gostaria de ver meu saldo da minha conta Toro. Minhas compras devem respeitar o limite de saldo e lastro do produto, para que assim eu possa adquirir produtos de Renda Fixa com sucesso.
 
-## Build
+**Restrições:**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para efeito de simplificação do desafio, os 6 produtos e a conta Toro com o Saldo podem ser definidos utilizando algum recurso predefinido no backend (uma coleção no banco de dados ou arquivo JSON).
 
-## Running unit tests
+**Critérios de Aceite:**
+- A lista de produtos deve vir com a ordenação decrescente do campo taxa (Melhores taxas primeiro).
+- Cada produto de Renda Fixa, deve apresentar, nome do ativo, indexador, preço unitário, taxa e botão comprar.
+- A cada compra, o estoque do produto deve ser debitado. 
+- O saldo da conta Toro deve ser validado. 
+- O estoque do Produto deve ser validado. 
+- Após a compra, o saldo da conta Toro deve ser debitado .
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##  Informações Técnicas
+**Tecnologias utilizadas:**
 
-## Running end-to-end tests
+- **Angular 18**: Versão mais atual de longa duração de suporte.
+- **Node.js**: Versão 20.14.0 ultima versão LTS.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Pré-requisitos
 
-## Further help
+Certifique-se de instalar as versões corretas do angular e do node.js
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Node.js (versão 20.14.0)
+- Angular CLI (versão 18)
+
+## Instalação
+
+Passo a passo para configurar o projeto localmente:
+
+1. Clone o repositório:
+    ```bash
+    git clone [https://github.com/chagasduarte/SmartHint.UI.git](https://github.com/mariaelisagmt/RendaFixaFrontend.git)
+    ```
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd RendaFixa.UI
+    ```
+3. Instale as dependências:
+    ```bash
+    npm install
+    ```
+4. Inicie o servidor de desenvolvimento:
+    ```bash
+    ng serve
+    ```
+5. Abra seu navegador e vá para `http://localhost:4200`.
+
+## Contato
+
+Para dúvidas ou sugestões, entre em contato:
+
+- **Seu Nome**: mariaelisagmt@gmail.com ou maria.elisa.gomes.de.matos@gmail.com
+- **LinkedIn**: [maria elisa gomes](https://linkedin.com/in/chagasduarte](https://www.linkedin.com/in/maria-elisa-gomes-de-matos/))
