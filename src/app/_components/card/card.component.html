@@ -1,41 +1,49 @@
 <div class="max-w-auto mx-auto bg-white rounded-lg shadow-md overflow-hidden mb-4">
     <div class="bg-red-900 p-2">
-      <h6 class="text-3xl font-bold text-white">{{ produto?.nome}}</h6>
+      <h6 class="text-lg sm:text-2xl md:text-3xl font-bold text-white">{{ produto?.nome}}</h6>
     </div>
-    <div class="p-3 flex justify-between">
-        <table class="table-auto text-gray-500 w-6/12 items-center">
+    <div class="p-3 flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
+        <table class="table-auto text-gray-500 w-full md:w-6/12 md:mr-20">
           <tbody>
             <tr>
-              <td class="px-4 py-2">Indexador</td>
-              <td class="px-4 py-2 text-white font-semibold rounded bg-blue-950">{{ produto?.indexador}}</td>
+              <td class="px-2 py-2">Indexador</td>
+              <td class="px-2 py-2 w-60"><p class="text-white font-semibold rounded bg-gray-500 h-10 px-2 py-2">{{ produto?.indexador}}</p></td>
             </tr>
             <tr>
-              <td class="px-4 py-2">Banco</td>
-              <td class="px-4 py-2 text-gray-800">Santander</td>
+              <td class="px-2 py-2">Preço</td>
+              <td class="px-2 py-2 text-gray-800 w-10">R$ {{ produto?.precoUnitario?.toFixed(2)?.replace('.', ',') }}</td>
             </tr>
             <tr>
-              <td class="px-4 py-2">Estoque</td>
-              <td class="px-4 py-2 text-gray-800">{{ produto?.estoque}}</td>
+              <td class="px-2 py-2">Estoque</td>
+              <td class="px-2 py-2 text-gray-800">{{ produto?.estoque}}</td>
             </tr>
           </tbody>
         </table>
-  
-        <div class="space-y-4 w-6/12 flex flex-col items-center">
-            <div class="flex items-center ml-auto">
-                <p class="mr-3 text-gray-500 text-sm w-16">Taxa:</p>
-                <h6 class="text-green-600 font-bold">{{ produto?.taxa?.toFixed(2)?.replace('.',',') }} %</h6>
-            </div>
-            <div class="flex items-center ml-auto">
-                <p class="mr-3 text-gray-500 text-sm mt-2">Preço a partir de:</p>
-                <h5 class="text-blue-950 text-lg px-2 py-1 font-bold">R$ {{ calcularPrecoTotal.toFixed(2).replace('.',',') }}</h5>
-            </div>
-        </div>          
+        <table class="table-auto text-gray-500 w-full md:w-6/12">
+          <tbody>
+            <tr>
+              <td class="px-2 py-2">Taxa</td>
+              <td class="text-green-600  text-lg  font-bold px-2 py-1 w-60">{{ produto?.taxa?.toFixed(2)?.replace('.',',') }} %</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-2">Total</td>
+              <td class="text-blue-950 text-lg px-2 py-1 font-bold">R$ {{ calcularPrecoTotal }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>  
       <div class="p-3 flex justify-between">
         <app-quantity-input (mudarQuantidade)="atualizarQuantidade($event)"
         [preco]="produto?.precoUnitario"
-        [saldo]="conta?.saldo"></app-quantity-input>
-        <button (click)="realizarAporte()"
+        [saldo]="conta?.saldo"
+        [estoque]="produto?.estoque"></app-quantity-input>
+        <button 
+          [disabled]="this.botaoBloqueado"
+          [ngClass]="{
+            'bg-green-600 hover:bg-green-700': !botaoBloqueado,
+            'bg-gray-400 cursor-not-allowed': botaoBloqueado
+          }"
+          (click)="realizarAporte()"
           class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
           Comprar
         </button>

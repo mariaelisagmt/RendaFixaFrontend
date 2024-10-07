@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class QuantityInputComponent {
   @Input() saldo : number | undefined;
   @Input() preco : number | undefined;
+  @Input() estoque : number | undefined;
   @Output() mudarQuantidade = new EventEmitter<number>();
   quantidade: number = 1;
   incrementarDesabilitado: boolean = false;
@@ -24,6 +25,9 @@ export class QuantityInputComponent {
       const totalIncrementar = preco * (quantidadeAtual + 1);
       this.incrementarDesabilitado = this.incrementarDesabilitado || totalIncrementar > (this.saldo ?? 0);
     }
+
+    if (this.estoque != null && this.estoque <= this.quantidade)
+      this.incrementarDesabilitado = true;
   }
 
   calcularPreco() : void{
