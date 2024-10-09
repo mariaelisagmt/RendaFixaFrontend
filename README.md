@@ -46,7 +46,7 @@ Passo a passo para configurar o projeto localmente:
 
 1. Clone o repositório:
     ```bash
-    git clone (https://github.com/mariaelisagmt/RendaFixaFrontend.git)
+    git clone https://github.com/mariaelisagmt/RendaFixaFrontend.git
     ```
 2. Navegue até o diretório do projeto:
     ```bash
