@@ -18,9 +18,9 @@ export class HomeComponent implements OnInit{
   constructor(private rendaFixaService: RendaFixaService) {}
 
   ngOnInit(): void {
-    this.loadProdutos();
     this.getCliente();
     this.getConta();
+    this.loadProdutos();
   }
 
   loadProdutos(): void {
