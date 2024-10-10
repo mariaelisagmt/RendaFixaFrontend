@@ -44,16 +44,18 @@ export class CardComponent {
     else
       this.botaoBloqueado = false;
   }
-
+  
   verificarEstoque(): boolean {
     if (this.produto != null && this.produto.estoque < this.quantidade) 
       return true;
     else
       return false;
-  }
+  } 
 
-  verificarSaldo(): boolean {
-    if (this.conta?.saldo??0 < (this.produto?.precoUnitario??0 * this.quantidade))
+verificarSaldo(): boolean {
+  let valorTotal = (this.produto?.precoUnitario??1) * this.quantidade;
+  let saldo = this.conta?.saldo??0;
+    if (saldo < valorTotal)
       return true;
     else 
       return false;
