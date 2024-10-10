@@ -55,7 +55,6 @@ export class CardComponent {
 verificarSaldo(): boolean {
   let valorTotal = (this.produto?.precoUnitario??1) * this.quantidade;
   let saldo = this.conta?.saldo??0;
-  console.log("valor="+ valorTotal +"yy ="+saldo);
     if (saldo < valorTotal)
       return true;
     else 
